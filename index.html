@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albania | Explore Culture & Nature</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+      :root {
+          --primary: #e63946;
+          --dark: #1d3557;
+          --light: #f1faee;
+          --accent: #457b9d;
+          --gold: #d4af37;
+      }
+
+      body, html {
+          margin: 0; padding: 0; height: 100%;
+          font-family: 'Poppins', sans-serif;
+          overflow: hidden;
+          background-color: var(--light);
+      }
+
+      /* Navigimi me Shigjeta */
+      .nav-arrow {
+          position: fixed; top: 50%; transform: translateY(-50%);
+          background: var(--primary);
+          color: white; border: none; width: 65px; height: 65px;
+          cursor: pointer; z-index: 1000; border-radius: 50%;
+          transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          font-size: 28px; box-shadow: 0 10px 20px rgba(230, 57, 70, 0.4);
+          display: flex; align-items: center; justify-content: center;
+      }
+
+      .nav-arrow:hover { background: var(--dark); transform: translateY(-50%) scale(1.15); }
+      #nextBtn { right: 30px; }
+      #prevBtn { left: 30px; display: none; }
+
+      .main-container {
+          display: flex; width: 300vw; height: 100vh; /* Updated to 300vw for 3 pages */
+          transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+      }
+
+      .page {
+          width: 100vw; height: 100vh; overflow-y: auto;
+          padding: 60px 8%; box-sizing: border-box;
+      }
+
+      header {
+          text-align: center; margin-bottom: 50px;
+          border-bottom: 4px solid var(--primary);
+          padding-bottom: 20px;
+      }
+
+      h1 { font-family: 'Playfair Display', serif; color: var(--dark); font-size: 3.5rem; margin: 0; }
+      h2 { color: var(--primary); border-left: 6px solid var(--dark); padding-left: 15px; margin: 40px 0 20px; }
+
+      /* Grid & Cards */
+      .grid {
+          display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 30px;
+      }
+
+      .card {
+          background: white; border-radius: 15px; overflow: hidden;
+          box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+          transition: 0.3s;
+      }
+      .card:hover { transform: translateY(-8px); }
+
+      .card-img {
+          width: 100%; height: 240px; object-fit: cover;
+          background-color: #eee;
+      }
+
+      .card-content { padding: 25px; }
+      .card h3 { color: var(--accent); margin: 0 0 10px 0; }
+      .card p { color: #555; line-height: 1.6; font-size: 0.95rem; }
+
+      /* Besa Special Style */
+      .besa-box {
+          background: var(--dark); color: white; padding: 45px;
+          border-radius: 20px; margin: 30px 0; border: 2px solid var(--gold);
+          text-align: center;
+      }
+      .besa-box h2 { color: var(--gold) !important; border: none; margin-top: 0; font-size: 2.2rem; }
+      .besa-box p { color: white !important; font-size: 1.1rem; max-width: 900px; margin: 15px auto; }
+
+      /* Credits Page Style */
+      .credits-content {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+      }
+      .credits-content h1 { font-size: 4rem; color: var(--primary); }
+      .credits-content p { font-size: 2rem; color: var(--dark); font-weight: bold; }
+
+      @media (max-width: 768px) {
+          .page { padding: 40px 5%; }
+          h1 { font-size: 2.2rem; }
+          .nav-arrow { width: 50px; height: 50px; font-size: 20px; }
+      }
+  </style>
+</head>
+<body>
+
+<button class="nav-arrow" id="prevBtn" onclick="movePage(-1)">&#10094;</button>
+<button class="nav-arrow" id="nextBtn" onclick="movePage(1)">&#10095;</button>
+
+<div class="main-container" id="slider">
+
+  <!-- PAGE 1: DESTINATIONS & GUIDE -->
+  <section class="page">
+    <header>
+      <h1>Albania</h1>
+      <p style="letter-spacing: 4px; font-weight: bold; color: var(--accent);">NATURE & TRAVEL GUIDE</p>
+    </header>
+
+    <h2>📍 Must-Visit Destinations</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://eia476h758b.exactdn.com/wp-content/uploads/2023/11/Windows-in-Berat-city-1024x683.jpeg?strip=all" alt="Berat" class="card-img">
+        <div class="card-content">
+          <h3>Berat: The Stone Heritage</h3>
+          <p>Explore the "City of a Thousand Windows." A unique UNESCO site where Ottoman houses climb the hills towards a castle that has stood for over 2,400 years.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://www.rivieratravel.co.uk/sites/default/files/styles/38_25_583x384/public/assetbank/GettyImages-854047790.jpg.webp?h=6f8e8448&itok=pImF0-wk" alt="Riviera" class="card-img">
+        <div class="card-content">
+          <h3>The Ionian Riviera</h3>
+          <p>From Dhërmi to Ksamil, experience the most beautiful beaches in the Balkans. Turquoise waters, hidden canyons, and islands you can swim to.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Jezerski_Vrh_%282694%29_sa_Karanfila_%282480%29.jpg" alt="Theth" class="card-img">
+        <div class="card-content">
+          <h3>The Albanian Alps</h3>
+          <p>Theth and Valbona offer world-class hiking trails. Discover the "Accursed Mountains" and the famous Blue Eye of the North.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>🗺️ Travel Information</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://eia476h758b.exactdn.com/wp-content/uploads/2023/07/Berat-Castle-scaled-e1693365548450.jpeg?strip=all" alt="History" class="card-img">
+        <div class="card-content">
+          <h3>History & Castles</h3>
+          <p>Visit Kruja, the city of Skanderbeg, or Rozafa Castle in Shkodër. Albania’s history is a mix of Illyrian, Roman, and Ottoman influences.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://loremflickr.com/800/600/albania,city" alt="Tirana" class="card-img">
+        <div class="card-content">
+          <h3>Tirana: The Heartbeat</h3>
+          <p>The colorful capital! Known for its vibrant nightlife, Bunk'Art museums, and the iconic Skanderbeg Square.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 2: TRADITIONS & CULTURE -->
+  <section class="page">
+    <header>
+      <h1>Traditions</h1>
+      <p style="letter-spacing: 4px; font-weight: bold; color: var(--accent);">SOUL & HERITAGE</p>
+    </header>
+
+    <div class="besa-box">
+      <h2>🤝 "Besa" & Hospitality</h2>
+      <p>"The house of the Albanian belongs to God and the guest." This ancient code of honor, Besa, led Albanians to save every Jewish refugee during WWII. It is the foundation of our identity.</p>
+    </div>
+
+    <h2>🍽️ Traditional Gastronomy</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://akt.gov.al/wp-content/uploads/2025/12/Albanian-Tave-Kosi-1.png" alt="Food" class="card-img">
+        <div class="card-content">
+          <h3>Tavë Kosi & Byrek</h3>
+          <p>Albanian cuisine is fresh and organic. From the slow-baked lamb in yogurt (Tavë Kosi) to the legendary layers of Flija.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://colombiancoffee.us/cdn/shop/articles/tips-to-recognize-good-quality-coffee-424970.png?v=1713377616&width=1024" alt="Coffee" class="card-img">
+        <div class="card-content">
+          <h3>Coffee Rituals</h3>
+          <p>In Albania, coffee is not just a drink; it's a conversation. We spend hours at cafes, reflecting our deep social connections.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>🎭 Arts & Heritage</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://loremflickr.com/800/600/albanian,tradition" alt="Costumes" class="card-img">
+        <div class="card-content">
+          <h3>Folk Costumes (Xhubleta)</h3>
+          <p>The Xhubleta is over 4,000 years old and protected by UNESCO. Every region has its own colors and patterns that tell a story.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://ich.unesco.org/img/photo/thumb/00143-BIG.jpg" alt="Polyphony" class="card-img">
+        <div class="card-content">
+          <h3>Iso-Polyphony</h3>
+          <p>Southern Albanian singing is performed without instruments. The harmony of multiple voices creates a hauntingly beautiful soundscape.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: CREDITS -->
+  <section class="page">
+    <div class="credits-content">
+      <h1>Created by:</h1>
+      <p>Student of Class 8-A</p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  let currentPage = 0;
+  const totalPages = 2; // Index starts at 0, so 0, 1, 2
+  const slider = document.getElementById('slider');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function movePage(direction) {
+    currentPage += direction;
+    if (currentPage < 0) currentPage = 0;
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    slider.style.transform = `translateX(-${currentPage * 100}vw)`;
+
+    // Logic to hide/show buttons
+    prevBtn.style.display = currentPage === 0 ? 'none' : 'flex';
+    nextBtn.style.display = currentPage === totalPages ? 'none' : 'flex';
+  }
+
+  // Navigimi me tastierë
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "ArrowRight") movePage(1);
+    if (e.key === "ArrowLeft") movePage(-1);
+  });
+</script>
+</body>
+</html>
